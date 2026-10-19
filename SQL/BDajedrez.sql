@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `ajedrez` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `ajedrez`;
 -- MySQL dump 10.13  Distrib 8.0.46, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: ajedrez
@@ -37,6 +39,16 @@ CREATE TABLE `casillero` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `casillero`
+--
+
+LOCK TABLES `casillero` WRITE;
+/*!40000 ALTER TABLE `casillero` DISABLE KEYS */;
+INSERT INTO `casillero` VALUES (1,1,0,0,1),(2,1,0,1,2),(3,1,0,2,1),(4,1,0,3,2),(5,1,0,4,1),(6,1,0,5,2),(7,1,0,6,1),(8,1,0,7,2),(9,1,1,0,2),(10,1,1,1,1),(11,1,1,2,2),(12,1,1,3,1),(13,1,1,4,2),(14,1,1,5,1),(15,1,1,6,2),(16,1,1,7,1),(17,1,2,0,1),(18,1,2,1,2),(19,1,2,2,1),(20,1,2,3,2),(21,1,2,4,1),(22,1,2,5,2),(23,1,2,6,1),(24,1,2,7,2),(25,1,3,0,2),(26,1,3,1,1),(27,1,3,2,2),(28,1,3,3,1),(29,1,3,4,2),(30,1,3,5,1),(31,1,3,6,2),(32,1,3,7,1),(33,1,4,0,1),(34,1,4,1,2),(35,1,4,2,1),(36,1,4,3,2),(37,1,4,4,1),(38,1,4,5,2),(39,1,4,6,1),(40,1,4,7,2),(41,1,5,0,2),(42,1,5,1,1),(43,1,5,2,2),(44,1,5,3,1),(45,1,5,4,2),(46,1,5,5,1),(47,1,5,6,2),(48,1,5,7,1),(49,1,6,0,1),(50,1,6,1,2),(51,1,6,2,1),(52,1,6,3,2),(53,1,6,4,1),(54,1,6,5,2),(55,1,6,6,1),(56,1,6,7,2),(57,1,7,0,2),(58,1,7,1,1),(59,1,7,2,2),(60,1,7,3,1),(61,1,7,4,2),(62,1,7,5,1),(63,1,7,6,2),(64,1,7,7,1);
+/*!40000 ALTER TABLE `casillero` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `color`
 --
 
@@ -50,6 +62,16 @@ CREATE TABLE `color` (
   UNIQUE KEY `idColor_UNIQUE` (`idColor`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `color`
+--
+
+LOCK TABLES `color` WRITE;
+/*!40000 ALTER TABLE `color` DISABLE KEYS */;
+INSERT INTO `color` VALUES (1,'Blanco'),(2,'Negro');
+/*!40000 ALTER TABLE `color` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `pieza`
@@ -79,6 +101,15 @@ CREATE TABLE `pieza` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `pieza`
+--
+
+LOCK TABLES `pieza` WRITE;
+/*!40000 ALTER TABLE `pieza` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pieza` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tablero`
 --
 
@@ -93,6 +124,16 @@ CREATE TABLE `tablero` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `tablero`
+--
+
+LOCK TABLES `tablero` WRITE;
+/*!40000 ALTER TABLE `tablero` DISABLE KEYS */;
+INSERT INTO `tablero` VALUES (1,'Tablero Principal');
+/*!40000 ALTER TABLE `tablero` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tipopieza`
 --
 
@@ -105,6 +146,16 @@ CREATE TABLE `tipopieza` (
   PRIMARY KEY (`idTipoPieza`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tipopieza`
+--
+
+LOCK TABLES `tipopieza` WRITE;
+/*!40000 ALTER TABLE `tipopieza` DISABLE KEYS */;
+INSERT INTO `tipopieza` VALUES (1,'Reina'),(2,'Rey'),(3,'Torre'),(4,'Alfil'),(5,'Caballo'),(6,'Peon');
+/*!40000 ALTER TABLE `tipopieza` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -115,4 +166,4 @@ CREATE TABLE `tipopieza` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-10-18  2:37:25
+-- Dump completed on 2026-10-19  8:47:29
