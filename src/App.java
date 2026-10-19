@@ -7,7 +7,6 @@ import java.time.LocalDate;
 public class App {
     public static void main(String[] args) throws Exception {
         crearPiezas();
-        //mostrarPiezasBD();
         mostrarPiezasBD();
 	}
 	public static  void insertarPieza(Pieza pieza){	
@@ -156,7 +155,6 @@ public static void mostrarPiezasBD() {
     String query = "SELECT * FROM pieza"; 
     
     try {
-        // Instancio el objeto y conecto UNA sola vez
         accesoBD = new AccesoDatos();
         accesoBD.conectar();
         con = accesoBD.getConexion();
@@ -171,7 +169,6 @@ public static void mostrarPiezasBD() {
         System.out.println("--------------------------------------------------------------------------------------------------------");
         
         while (rs.next()) {
-            // Extraigo los datos
             String descripcion = rs.getString("Descripcion");
             String idCasillero = rs.getString("idCasillero");
             String color = rs.getString("idColor");
@@ -187,7 +184,6 @@ public static void mostrarPiezasBD() {
     } catch (Exception e) {
         System.out.println("Error al ejecutar la consulta: " + e.getMessage());
     } finally {
-        // Bloque finally para asegurar que los recursos se cierren siempre
         try {
             if (rs != null) rs.close();
             if (sentencia != null) sentencia.close();
